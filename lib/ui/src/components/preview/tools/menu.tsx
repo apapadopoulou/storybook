@@ -18,7 +18,7 @@ export const menuTool: Addon = {
         !isVisible && (
           <>
             <IconButton aria-label="Show sidebar" key="menu" onClick={toggle} title="Show sidebar">
-              <Icons icon="menu" />
+              <Icons icon="sidebartoggle" />
             </IconButton>
             <Separator />
           </>
