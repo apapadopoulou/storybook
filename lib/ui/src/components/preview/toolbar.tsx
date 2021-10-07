@@ -16,6 +16,7 @@ import { PreviewProps } from './utils/types';
 import { copyTool } from './tools/copy';
 import { ejectTool } from './tools/eject';
 import { menuTool } from './tools/menu';
+import { panelToggle } from './tools/addonPanelToggle';
 
 export const getTools = (getFn: API['getElements']) => Object.values(getFn<Addon>(types.TOOL));
 
@@ -199,7 +200,7 @@ export function filterTools(
     tabs.filter((p) => !p.hidden).length >= 1 && createTabsTool(tabs),
     ...tools,
   ];
-  const toolsRight = [...toolsExtra];
+  const toolsRight = [...toolsExtra, panelToggle];
 
   const filter = (item: Partial<Addon>) =>
     item &&
